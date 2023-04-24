@@ -25,3 +25,19 @@ def name(request, data):
     print(escaped_data)
     return HttpResponse(f"Hello, {escaped_data}!")
 
+
+def hello2(request):
+    return render(
+        request,
+        'hello.html'
+    )
+
+
+def name2(request, data):
+    return render(
+        request,
+        'name.html',
+        context={
+            "data": data
+        }
+    )
