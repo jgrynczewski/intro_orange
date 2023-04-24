@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.utils.html import escape
 
 
 # Create your views here.
@@ -15,4 +16,12 @@ def adam(request):
 
 
 def name(request, data):
-    return HttpResponse(f"Hello, {data}!")
+    # Podatność xss
+    # XSS - Cross Site Scripting
+
+    # Always remember to escape your output
+    print(data)
+    escaped_data = escape(data)
+    print(escaped_data)
+    return HttpResponse(f"Hello, {escaped_data}!")
+
