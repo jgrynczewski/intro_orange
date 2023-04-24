@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.shortcuts import render, HttpResponse
 from django.utils.html import escape
 
@@ -39,5 +41,23 @@ def name2(request, data):
         'name.html',
         context={
             "data": data
+        }
+    )
+
+
+# Widok - warstwa logiki
+# Szablon - warstwa prezentacji (DTL - Django Template Language)
+def is_it_new_year(request):
+    now = datetime.now()
+
+    is_new_year = False
+    if now.day == 1 and now.month == 1:
+        is_new_year = True
+
+    return render(
+        request,
+        'is_it_new_year.html',
+        context={
+            'is_new_year': is_new_year,
         }
     )
