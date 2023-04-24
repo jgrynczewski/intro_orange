@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # build-in app
+    # build-in apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # new apps
+    # local apps
     'helo.apps.HeloConfig',
+    'next_app.apps.NextAppConfig',
 ]
 
 MIDDLEWARE = [
