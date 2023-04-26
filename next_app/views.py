@@ -4,6 +4,11 @@ from django.shortcuts import render, HttpResponse
 from django.utils.html import escape
 
 
+class Cow:
+    def __init__(self, name):
+        self.name = name
+
+
 # Create your views here.
 def hello(request):
     return HttpResponse("Hello, world!")
@@ -22,10 +27,11 @@ def name(request, data):
     # XSS - Cross Site Scripting
 
     # Always remember to escape your output
-    print(data)
-    escaped_data = escape(data)
-    print(escaped_data)
-    return HttpResponse(f"Hello, {escaped_data}!")
+    # print(data)
+    # escaped_data = escape(data)
+    # print(escaped_data)
+    # return HttpResponse(f"Hello, {escaped_data}!")
+    return HttpResponse(f"Hello, {data}!")
 
 
 def hello2(request):
@@ -51,7 +57,7 @@ def is_it_new_year(request):
     now = datetime.now()
 
     is_new_year = False
-    if now.day == 1 and now.month == 1:
+    if now.day == 26 and now.month == 4:
         is_new_year = True
 
     return render(
@@ -59,5 +65,32 @@ def is_it_new_year(request):
         'is_it_new_year.html',
         context={
             'is_new_year': is_new_year,
+        }
+    )
+
+
+def fruits(request):
+    fruits_list = [
+        'jabłko',
+        'banan',
+        'winogrona',
+        'mandarynki',
+    ]
+
+    person = {
+        "name": "Jan",
+        "surname": "Kowalski",
+        "age": 15,
+    }
+
+    cow = Cow(name="Mućka")
+
+    return render(
+        request,
+        'fruits.html',
+        context={
+            'fruits': fruits_list,
+            'person': person,
+            'cow': cow,
         }
     )

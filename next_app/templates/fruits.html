@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- Komentarz html -->
+    {# {% skdjcbn %} Komentarz jednolinijkowy DTL (Django Template Language) #}
+    {% comment %}
+        Komentarz wielolinijkowy DTL
+    {% endcomment %}
+    <ul>
+    {% for item in fruits %}
+        <li>{{ forloop.counter }} - {{ item }}</li>
+    {% endfor %}
+    </ul>
+
+    <!-- Drugi element (o indeksie 1) z listy -->
+    <p>{{ fruits.1 }}</p>
+    <!-- Wrtość pod kluczem age -->
+    <p>{{ person.age }}</p>
+    <!-- atrybut name -->
+    <p>{{ cow.name }}</p>
+
+</body>
+</html>
