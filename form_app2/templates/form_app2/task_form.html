@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form method="POST">
+      {% csrf_token %}
+      <input type="text" placeholder="zadanie" name="task">
+      <input type="submit" value="Dodaj">
+  </form>
+
+  <h2>Todo list:</h2>
+  <ul>
+    {% for task in tasks %}
+        <li>{{ task }}</li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
