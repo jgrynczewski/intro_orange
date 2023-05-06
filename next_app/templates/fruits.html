@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
+    <!-- Tagi dtl - instruckje -->
+    <!-- Filtry dtl - funkcje -->
+
     <!-- Komentarz html -->
     {# {% skdjcbn %} Komentarz jednolinijkowy DTL (Django Template Language) #}
     {% comment %}
@@ -27,6 +30,12 @@
     <!-- Wyszukiwanie (lookup) po indeksie -->
     <!-- Drugi element (o indeksie 1) z listy -->
     <p>{{ fruits.1 }}</p>
+
+    <!-- filtry dtl -->
+    <p>{{ fruits | length }}</p>
+    <p>{{ fruits | join:", " }}</p>
+    <p>{{ fruits | upper }}</p>
+    <p>{{ fruits | cut:"a" }}</p>
 
 </body>
 </html>
