@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'helo.apps.HeloConfig',
     'next_app.apps.NextAppConfig',
     'links.apps.LinksConfig',
+    'inheritance.apps.InheritanceConfig',
 ]
 
 MIDDLEWARE = [
