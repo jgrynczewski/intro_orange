@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista zadań</title>
+</head>
+<body>
+  <a href="{% url 'crud_app:task_create_view' %}"><button>Dodaj nowe zadanie</button></a>
+  <h2>Lista zadań:</h2>
+  <ul>
+    {% for task in tasks %}
+      <li><a href="{% url 'crud_app:task_detail_view' task.id %}">{{ task.name }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

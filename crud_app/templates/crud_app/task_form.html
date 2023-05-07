@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Dodaj zadanie:</h2>
+  <form method="POST">
+      {% csrf_token %}
+      <input type="text" placeholder="zadanie" name="task">
+      <input type="submit" value="Dodaj">
+  </form>
+</body>
+</html>
