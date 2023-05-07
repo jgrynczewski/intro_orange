@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from form_app5.models import Task
+
 
 def task_create_view(request):
     if request.method == "GET":
@@ -11,17 +13,15 @@ def task_create_view(request):
     if request.method == "POST":
         task = request.POST.get('task')
         if task:
-            # zapis do pliku
-            with open('tasks.txt', 'a+') as f:
-                f.write(task + "\n")
+            # zapis do tabeli Task
+            Task.objects.create(name=task)
 
         return redirect("form_app5:task_list_view")
 
 
 def task_list_view(request):
-    # odczyt z pliku
-    with open('tasks.txt', 'r') as f:
-        tasks = f.readlines()
+    # odczyt z tabeli Task
+    tasks = Task.objects.all()
 
     return render(
         request,
