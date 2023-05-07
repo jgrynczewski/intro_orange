@@ -43,3 +43,24 @@ def task_detail_view(request, pk):
             'task': task,
         }
     )
+
+
+def task_update_view(request, pk):
+    task = get_object_or_404(Task, id=pk)
+
+    if request.method == "GET":
+        return render(
+            request,
+            'crud_app/task_update.html',
+            context={
+                'task': task,
+            }
+        )
+
+    if request.method == "POST":
+        task_new_name = request.POST.get('task')
+        if task_new_name:
+            task.name = task_new_name
+            task.save()
+
+        return redirect("crud_app:task_list_view")
