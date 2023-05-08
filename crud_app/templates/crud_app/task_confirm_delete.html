@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Czy na pewno chcesz usunąć task o numerze {{ task.id }} ({{ task.name }})?</h1>
+  <form method="POST">{% csrf_token %}
+      <input type="submit" name="accept" value="TAK">
+      <input type="submit" name="reject" value="NIE">
+  </form>
+</body>
+</html>

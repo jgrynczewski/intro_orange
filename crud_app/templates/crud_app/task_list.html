@@ -12,6 +12,7 @@
       <li style='padding: 0.2em;'>
           <a href="{% url 'crud_app:task_detail_view' task.id %}">{{ task.name }}</a>
           <a href="{% url 'crud_app:task_update_view' task.id %}"><button>Zmień</button></a>
+          <a href="{% url 'crud_app:task_delete_view' task.id %}"><button>Usuń</button></a>
       </li>
     {% endfor %}
   </ul>

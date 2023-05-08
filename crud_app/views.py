@@ -64,3 +64,23 @@ def task_update_view(request, pk):
             task.save()
 
         return redirect("crud_app:task_list_view")
+
+
+def task_delete_view(request, pk):
+    task = get_object_or_404(Task, id=pk)
+
+    if request.method == "GET":
+        return render(
+            request,
+            'crud_app/task_confirm_delete.html',
+            context={
+                'task': task,
+            }
+        )
+
+    if request.method == "POST":
+        res = request.POST.get('accept')
+        if res:
+            task.delete()
+
+        return redirect("crud_app:task_list_view")
