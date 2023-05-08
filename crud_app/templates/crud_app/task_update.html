@@ -11,5 +11,6 @@
       <input type="text" placeholder="zadanie" name="task" value="{{ task.name }}">
       <input type="submit" value="Zmodyfikuj">
   </form>
+  <a href="{% url 'crud_app:task_list_view' %}"><button style="margin-top:1em;">Anuluj</button></a>
 </body>
 </html>

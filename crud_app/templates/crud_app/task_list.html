@@ -9,7 +9,10 @@
   <h2>Lista zadań:</h2>
   <ul>
     {% for task in tasks %}
-      <li><a href="{% url 'crud_app:task_detail_view' task.id %}">{{ task.name }}</a></li>
+      <li style='padding: 0.2em;'>
+          <a href="{% url 'crud_app:task_detail_view' task.id %}">{{ task.name }}</a>
+          <a href="{% url 'crud_app:task_update_view' task.id %}"><button>Zmień</button></a>
+      </li>
     {% endfor %}
   </ul>
 </body>
