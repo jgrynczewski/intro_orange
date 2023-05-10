@@ -27,6 +27,7 @@ class Actor(models.Model):
     name = models.CharField(max_length=100)
     # movie_set  # automatycznie dorobiony przez django menadżer powiązany
 
+
 class Movie(models.Model):
     title = models.CharField(max_length=100)
     actors = models.ManyToManyField('Actor')  # i to też jest menadżer powiązany

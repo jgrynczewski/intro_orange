@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'form_app5.apps.FormApp5Config',
     'crud_app.apps.CrudAppConfig',
     'relations_app.apps.RelationsAppConfig',
+    'message_app.apps.MessageAppConfig',
 ]
 
 MIDDLEWARE = [

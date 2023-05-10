@@ -36,4 +36,5 @@ urlpatterns = [
     path('form5/', include('form_app5.urls')),
     path('crud/', include('crud_app.urls')),
     path('relations/', include('relations_app.urls')),
+    path('message/', include('message_app.urls')),
 ]
