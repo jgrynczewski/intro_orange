@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form method="POST">{% csrf_token %}
+      <label for="email_id">Email:</label>
+          <input type="email" name="email" id="email_id">
+      <label for="subject_id">Kategoria:</label>
+          <select name="category" id="category_id">
+              <option value="question">pytanie</option>
+              <option value="other">inne</option>
+          </select>
+      <label for="subject_id">Tytuł:</label>
+          <input type="text" name="subject" id='subject_id'>
+      <label for="body_id">Treść:</label>
+          <textarea name="body" id="body_id" cols="40" rows="10"></textarea>
+      <label for="date_id">Ulubiona data:</label>
+          <input type="date" name="fav_date" id="date_id">
+      <label for="time_id">Ulubiona godzina:</label>
+          <input type="time" name="fav_time" id="time_id">
+      <input type="submit" value="Prześlij">
+  </form>
+</body>
+</html>
