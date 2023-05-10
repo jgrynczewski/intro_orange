@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from message_app.models import Message
+from message_app.forms import MessageForm
 
 
 # html form
@@ -27,4 +28,16 @@ def contact1(request):
     return render(
         request,
         'message_app/contact1.html',
+    )
+
+
+def contact2(request):
+    form = MessageForm()
+
+    return render(
+        request,
+        'message_app/contact2.html',
+        context={
+            'form': form,
+        }
     )
