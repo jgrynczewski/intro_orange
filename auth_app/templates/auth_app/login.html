@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  {% if user.is_authenticated %}
+    <h1>Witaj {{ user.username }}!</h1>
+    <a href="{% url 'auth_app:logout' %}"><button>Wyloguj</button></a>
+  {% else %}
+      <form method="POST">{% csrf_token %}
+          <input type="text" name='username' placeholder="username">
+          <input type="password" name="password" placeholder="hasło">
+          <input type="submit" value="Zaloguj">
+      </form>
+  {% endif %}
+</body>
+</html>
