@@ -105,3 +105,7 @@ def contact3(request):
                 'form': form,
             }
         )
+
+
+# dalsza automatyzacja generowania formularzy jest możliwa z wykorzystaniem biblioteki django-crispy-forms
+# https://django-crispy-forms.readthedocs.io/en/latest/
