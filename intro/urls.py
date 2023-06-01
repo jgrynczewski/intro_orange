@@ -40,4 +40,5 @@ urlpatterns = [
     path('view/', include('view_app.urls')),
     path('state/', include('state_app.urls')),
     path('auth/', include('auth_app.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
