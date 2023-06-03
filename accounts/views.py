@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from django.contrib.auth import get_user_model
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -62,3 +62,18 @@ def logout_view(request):
     logout(request)
 
     return redirect('accounts:home')
+
+
+def fun_view(request):
+    return render(
+        request,
+        'accounts/fun.html'
+    )
+
+
+@permission_required('accounts.view_user', raise_exception=True)
+def secret_view(request):
+    return render(
+        request,
+        'accounts/secret.html'
+    )

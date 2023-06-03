@@ -1,0 +1,17 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <img src="{% static 'accounts/img/cat.webp' %}">
+
+  {% if perms.accounts.change_user %}
+    <button>Tylko wybrańcy mogą to zrobić</button>
+  {% endif %}
+
+</body>
+</html>
